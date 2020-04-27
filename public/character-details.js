@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('id');
 
 const div = document.getElementById('characterDetails');
-const url = "http://swapi.dev/api/people";
+const url = "https://swapi.dev/api/people";
 
 fetch(url)
     .then(response => {
