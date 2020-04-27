@@ -1,0 +1,62 @@
+/* Background pattern from Toptal Subtle Patterns */
+
+body {
+    font-family: 'Poller One', cursive;
+    background-image: url("img/tlo.png");
+    color: #ffe919;
+}
+
+#container {
+    margin-top: 40px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logo {
+    border: 2px solid #ffe919;
+    border-radius: 2px;
+    height: 250px;
+}
+
+h1 {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#characters {
+    margin-top: 30px;
+}
+
+.character {
+    margin: 10px 0px 0px 115px;
+    font-size: 16px;
+}
+
+a {
+    color: #ffe919;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+#title2 {
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+.text {
+    float: left;
+    width: 130px;
+    margin-left: 120px;
+    margin-bottom: 10px;
+}
+
+.data {
+    float: left;
+    width: 250px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}

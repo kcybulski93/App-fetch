@@ -6,7 +6,7 @@ function append(parent, el) {
     return parent.appendChild(el)
 }
 
-const ul = document.getElementById('characters')
+const div1 = document.getElementById('characters')
 const url = "http://swapi.dev/api/people"
 
 fetch(url)
@@ -20,14 +20,14 @@ fetch(url)
     .then(data => {
         let characters = data.results
         return characters.map(character => {
-            let li = createNode('li'),
+            let div2 = createNode('div'),
                 span = createNode('span'),
                 a = createNode('a');
-            span.innerHTML = `${character.name}`;
-            a.id = `${character.name}`;
+            div2.classList.add('character');
+            span.innerHTML = `<i class="icon-star-1"> ${character.name}`;
             a.href = `character-details.html?id=${character.name}`;
-            append(ul, li);
-            append(li, a);
+            append(div1, div2);
+            append(div2, a);
             append(a, span);
         })
     })
