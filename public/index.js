@@ -7,7 +7,7 @@ function append(parent, el) {
 }
 
 const div1 = document.getElementById('characters')
-const url = "https://swapi.dev/api/people"
+const url = "https://swapi.dev/api/people/"
 
 fetch(url)
     .then(response => {
