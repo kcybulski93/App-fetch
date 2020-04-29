@@ -8,7 +8,7 @@ function append(parent, el) {
 
 function newPage() {
     let txt = this.innerText;
-    let link = `http://swapi.dev/api/people/?page=${txt}/`
+    let link = `https://swapi.dev/api/people/?page=${txt}/`
     divCharacters.innerHTML = null;
     fetch(link)
         .then(response => {
