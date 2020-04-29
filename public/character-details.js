@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('id');
-const link = urlParams.get('link');
+const link = `https://swapi.dev/api/people/${myParam}/`
 
 const div = document.getElementById('characterDetails');
 
@@ -12,12 +12,6 @@ fetch(link)
         throw Error(response.status)
     })
     .then(response => response.json())
-    .then(data => {
-        for (let i = 0, max = data.results.length; i < max; i++) {
-            if (myParam === data.results[i].name)
-                return data.results[i];
-        }
-    })
     .then(character => {
         div.innerHTML =
             `<div class="text">Name:</div> <div class="data">${character.name}</div>
