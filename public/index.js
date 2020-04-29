@@ -66,7 +66,6 @@ fetch(url)
 for (let i = 0; i < 9; i++) {
     let btn = createNode('button');
     btn.innerHTML = `${i+1}`;
-    btn.classList.add(`button`);
     btn.id = `btn`;
     append(divButtons, btn);
 }
@@ -76,3 +75,10 @@ let button = document.querySelectorAll('button');
 for (let i = 0; i < 9; i++) {
     button[i].addEventListener('click', newPage)
 }
+
+$('button').on('click', function () {
+    $('button').removeClass('selected');
+    $(this).addClass('selected');
+});
+
+$('button:first').addClass('selected')
