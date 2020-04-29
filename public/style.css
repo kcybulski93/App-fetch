@@ -26,6 +26,7 @@ h1 {
 
 #characters {
     margin-top: 30px;
+    height: 302px;
 }
 
 .character {
@@ -59,4 +60,9 @@ a:hover {
     width: 250px;
     margin-left: 0px;
     margin-bottom: 10px;
+}
+
+#buttons {
+    height: 50px;
+    margin-top: 30px;
 }
