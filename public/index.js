@@ -26,7 +26,7 @@ function newPage() {
                     a = createNode('a');
                 div.classList.add('character');
                 span.innerHTML = `<i class="icon-star-1">${character.name}`;
-                a.href = `character-details.html?id=${character.name}`;
+                a.href = `character-details.html?id=${character.name}&link=${link}`;
                 append(divCharacters, div);
                 append(div, a);
                 append(a, span);
@@ -55,7 +55,7 @@ fetch(url)
                 a = createNode('a');
             div.classList.add('character');
             span.innerHTML = `<i class="icon-star-1"> ${character.name}`;
-            a.href = `character-details.html?id=${character.name}`;
+            a.href = `character-details.html?id=${character.name}&link=${url}`;
             append(divCharacters, div);
             append(div, a);
             append(a, span);

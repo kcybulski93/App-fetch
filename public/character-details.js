@@ -1,10 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('id');
+const link = urlParams.get('link');
 
 const div = document.getElementById('characterDetails');
-const url = "https://swapi.dev/api/people/";
 
-fetch(url)
+fetch(link)
     .then(response => {
         if (response.ok) {
             return response;
