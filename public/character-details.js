@@ -1,24 +1,39 @@
 const urlParams = new URLSearchParams(window.location.search);
-const myParam = urlParams.get('id');
-const link = `https://swapi.dev/api/people/${myParam}/`
+const characterId = urlParams.get('id');
+const link = `https://swapi.dev/api/people/${characterId}/`
 
 const div = document.getElementById('characterDetails');
 
 function showError(error) {
-    if (error == "Error: 404") {
-        div.innerHTML = `<div class="error">${error}</div> 
+    switch (error.toString()) {
+        case "Error: 404":
+            div.innerHTML = `<div class="error">${error}</div> 
                         <h3>File not found.</h3> 
                         <h3>Check if the URL address is correct.</h3>`;
-    } else if (error == "Error: 403") {
-        div.innerHTML = `<div class="error">${error}</div> <h3>Forbidden.</h3>`;
-    } else if (error == "Error: 500") {
-        div.innerHTML = `<div class="error">${error}</div> <h3>Internal Server Error.</h3>`;
-    } else if (error == "Error: 503") {
-        div.innerHTML = `<div class="error">${error}</div> <h3>Service Unavailable.</h3>`;
-    } else if (error == "Error: 504") {
-        div.innerHTML = `<div class="error">${error}</div> <h3>Gateway Timeout.</h3>`;
-    } else {
-        div.innerHTML = `<div class="error">${error}</div>`;
+            break;
+        case "Error: 403":
+            div.innerHTML = `<div class="error">${error}</div> 
+                <h3>File not found.</h3> 
+                <h3>Forbidden.</h3>`;
+            break;
+        case "Error: 500":
+            div.innerHTML = `<div class="error">${error}</div> 
+                <h3>File not found.</h3> 
+                <h3>Internal Server Error.</h3>`;
+            break;
+        case "Error: 503":
+            div.innerHTML = `<div class="error">${error}</div> 
+                <h3>File not found.</h3> 
+                <h3>Service Unavailable.</h3>`;
+            break;
+        case "Error: 504":
+            div.innerHTML = `<div class="error">${error}</div> 
+                <h3>File not found.</h3> 
+                <h3>Gateway Timeout</h3>`;
+            break;
+        default:
+            div.innerHTML = `<div class="error">${error}</div>`;
+            break;
     }
 }
 
