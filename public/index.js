@@ -12,6 +12,24 @@ let link = "https://swapi.dev/api/people/";
 const divCharacters = document.getElementById('characters');
 const divButtons = document.getElementById('buttons');
 
+function showError(error) {
+    if (error == "Error: 404") {
+        divCharacters.innerHTML = `<div class="error">${error}</div> 
+                        <h3>File not found.</h3> 
+                        <h3>Check if the URL address is correct.</h3>`;
+    } else if (error == "Error: 403") {
+        divCharacters.innerHTML = `<div class="error">${error}</div> <h3>Forbidden.</h3>`;
+    } else if (error == "Error: 500") {
+        divCharacters.innerHTML = `<div class="error">${error}</div> <h3>Internal Server Error.</h3>`;
+    } else if (error == "Error: 503") {
+        divCharacters.innerHTML = `<div class="error">${error}</div> <h3>Service Unavailable.</h3>`;
+    } else if (error == "Error: 504") {
+        divCharacters.innerHTML = `<div class="error">${error}</div> <h3>Gateway Timeout.</h3>`;
+    } else {
+        divCharacters.innerHTML = `<div class="error">${error}</div>`;
+    }
+}
+
 function fetchFuction() {
     fetch(link)
         .then(response => {
@@ -37,7 +55,7 @@ function fetchFuction() {
                 append(a, span);
             })
         })
-        .catch(error => console.log(error))
+        .catch(error => showError(error))
 }
 
 function newPage() {
@@ -82,3 +100,4 @@ fetch(link)
 
         $('button:first').addClass('selected')
     })
+    .catch(error => showError(error))

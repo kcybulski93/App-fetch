@@ -4,6 +4,24 @@ const link = `https://swapi.dev/api/people/${myParam}/`
 
 const div = document.getElementById('characterDetails');
 
+function showError(error) {
+    if (error == "Error: 404") {
+        div.innerHTML = `<div class="error">${error}</div> 
+                        <h3>File not found.</h3> 
+                        <h3>Check if the URL address is correct.</h3>`;
+    } else if (error == "Error: 403") {
+        div.innerHTML = `<div class="error">${error}</div> <h3>Forbidden.</h3>`;
+    } else if (error == "Error: 500") {
+        div.innerHTML = `<div class="error">${error}</div> <h3>Internal Server Error.</h3>`;
+    } else if (error == "Error: 503") {
+        div.innerHTML = `<div class="error">${error}</div> <h3>Service Unavailable.</h3>`;
+    } else if (error == "Error: 504") {
+        div.innerHTML = `<div class="error">${error}</div> <h3>Gateway Timeout.</h3>`;
+    } else {
+        div.innerHTML = `<div class="error">${error}</div>`;
+    }
+}
+
 fetch(link)
     .then(response => {
         if (response.ok) {
@@ -23,4 +41,4 @@ fetch(link)
             <div class="text">Skin color:</div> <div class="data">${character.skin_color}</div>
             <div class="text">Eye color:</div> <div class="data">${character.eye_color}</div>`
     })
-    .catch(error => console.log(error))
+    .catch(error => showError(error))
