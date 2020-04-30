@@ -12,23 +12,19 @@ function showError(error) {
                         <h3>Check if the URL address is correct.</h3>`;
             break;
         case "Error: 403":
-            div.innerHTML = `<div class="error">${error}</div> 
-                <h3>File not found.</h3> 
+            div.innerHTML = `<div class="error">${error}</div>  
                 <h3>Forbidden.</h3>`;
             break;
         case "Error: 500":
             div.innerHTML = `<div class="error">${error}</div> 
-                <h3>File not found.</h3> 
                 <h3>Internal Server Error.</h3>`;
             break;
         case "Error: 503":
             div.innerHTML = `<div class="error">${error}</div> 
-                <h3>File not found.</h3> 
                 <h3>Service Unavailable.</h3>`;
             break;
         case "Error: 504":
             div.innerHTML = `<div class="error">${error}</div> 
-                <h3>File not found.</h3> 
                 <h3>Gateway Timeout</h3>`;
             break;
         default:
