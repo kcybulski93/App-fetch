@@ -10,7 +10,6 @@ html {
     font-family: 'Poller One', cursive;
     background-image: url("img/tlo.png");
     color: #ffe919;
-    overflow: hidden;
 }
 
 /* CSS for index.html */
@@ -416,10 +415,6 @@ h3 {
 }
 
 @media (orientation: landscape) {
-    html {
-        overflow: auto;
-    }
-
     main {
         margin-top: 15px;
     }
