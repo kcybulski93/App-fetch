@@ -1,95 +1,128 @@
 /* Background pattern from Toptal Subtle Patterns */
 
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
     font-family: 'Poller One', cursive;
     background-image: url("img/tlo.png");
     color: #ffe919;
+    overflow: hidden;
 }
 
-#container {
-    margin-top: 38px;
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+/* CSS for index.html */
+
+.container {
+    width: 90%;
+    margin: 3vh auto;
 }
 
-#logo {
+.logo {
     border: 2px solid #ffe919;
     border-radius: 2px;
-    height: 250px;
+    max-width: 440px;
+    margin: 0 auto;
 }
 
-h1 {
-    margin-top: 30px;
+.logo img {
+    width: 100%;
+    display: block;
+}
+
+main {
+    margin-top: 3vh;
+}
+
+main h1 {
+    font-size: 22px;
     text-align: center;
+    margin-bottom: 3vh;
+    text-transform: uppercase;
 }
 
-#characters {
-    margin-top: 30px;
-    height: 302px;
+main #characters {
+    width: 250px;
+    height: 236px;
+    margin: 0 auto;
 }
 
-.character {
-    margin: 10px 0px 0px 115px;
-    font-size: 16px;
+main .character {
+    margin: 0px 0px 7px 35px;
+    font-size: 14px;
 }
 
-a {
+main .character a {
     color: #ffe919;
     text-decoration: none;
-}
-
-a:hover {
-    color: white;
-}
-
-#title2 {
-    margin-top: 80px;
-    margin-bottom: 30px;
-}
-
-.text {
-    float: left;
-    width: 130px;
-    margin-left: 120px;
-    margin-bottom: 10px;
-}
-
-.data {
-    float: left;
-    width: 250px;
-    margin-left: 0px;
-    margin-bottom: 10px;
+    display: block;
 }
 
 #buttons {
-    height: 50px;
-    margin-bottom: 20px;
-    margin-top: 40px;
+    margin: 12px auto 0 auto;
+    text-align: center;
 }
 
 button {
-    font-family: 'Poller One', cursive;
-    height: 40px;
-    width: 40px;
-    margin-left: 14px;
+    height: 22px;
+    width: 22px;
+    margin-left: 8px;
     background-color: black;
     border: 2px solid #ffe919;
     border-radius: 5px;
     color: white;
     outline: none;
-}
-
-button:hover {
-    -webkit-box-shadow: 0px 0px 21px 3px rgba(255, 255, 255, 0.47);
-    -moz-box-shadow: 0px 0px 21px 3px rgba(255, 255, 255, 0.47);
-    box-shadow: 0px 0px 21px 3px rgba(255, 255, 255, 0.47);
-    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
 }
 
 button.selected {
     color: rgba(248, 28, 28, 0.842);
     background-color: black;
+}
+
+i.icon-star-1:before {
+    vertical-align: 1px;
+    font-size: 14px;
+}
+
+/* CSS for character-details */
+
+.container2 {
+    margin-top: 7vh;
+}
+
+.title2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+#characterDetails {
+    width: 280px;
+    height: 280px;
+    margin: 4vh auto;
+    font-size: 16px;
+}
+
+.text {
+    width: 60%;
+    float: left;
+    padding: 8px 0px 8px 30px;
+}
+
+.data {
+    width: 40%;
+    float: left;
+    padding: 8px 0px 8px 5px;
+}
+
+.clearfix {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .error {
@@ -100,6 +133,382 @@ button.selected {
 }
 
 h3 {
-    text-align: center;
     color: white;
+    text-align: center;
+}
+
+@media (orientation: portrait) and (min-width: 360px) {
+    main {
+        margin-top: 3vh;
+    }
+
+    main h1 {
+        font-size: 26px;
+    }
+
+    main #characters {
+        width: 280px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    main .character {
+        margin: 0px 0px 10px 35px;
+        font-size: 16px;
+    }
+
+    #buttons {
+        margin: 2vh auto 0 auto;
+    }
+
+    button {
+        height: 25px;
+        width: 25px;
+        margin-left: 9px;
+        font-size: 14px;
+    }
+
+    i.icon-star-1:before {
+        vertical-align: 2px;
+        font-size: 16px;
+    }
+
+    .title2 {
+        font-size: 32px;
+    }
+
+    #characterDetails {
+        margin: 5vh auto;
+        font-size: 18px;
+    }
+
+    .text {
+        padding: 8px 0px 8px 25px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 375px) and (min-height:812px) {
+    .container {
+        margin-top: 9vh;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 411px) {
+    main {
+        margin-top: 5vh;
+    }
+
+    main h1 {
+        margin-bottom: 4vh;
+    }
+
+    main #characters {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    main .character {
+        margin: 0px 0px 10px 35px;
+        font-size: 18px;
+    }
+
+    #buttons {
+        margin: 5vh auto 0 auto;
+    }
+
+    button {
+        height: 28px;
+        width: 28px;
+        margin-left: 11px;
+        font-size: 14px;
+    }
+
+    .title2 {
+        font-size: 36px;
+    }
+
+    #characterDetails {
+        margin: 5vh auto;
+        font-size: 20px;
+    }
+
+    .text {
+        padding: 8px 0px 8px 10px;
+    }
+
+    .data {
+        padding: 8px 0px 8px 10px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 411px) and (min-height:823px) {
+    .container {
+        margin-top: 7vh;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 460px) {
+    button {
+        height: 30px;
+        width: 30px;
+        margin-left: 12px;
+        font-size: 16px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 640px) {
+    .container {
+        width: 70%;
+        margin: 3vh auto;
+    }
+
+    .logo {
+        border: 3px solid #ffe919;
+    }
+
+    main {
+        margin-top: 4vh;
+    }
+
+    main h1 {
+        font-size: 42px;
+        margin-bottom: 3vh;
+    }
+
+    main #characters {
+        width: 350px;
+        height: 430px;
+        margin: 0 auto;
+    }
+
+    main .character {
+        margin: 0px 0px 20px 35px;
+        font-size: 20px;
+    }
+
+    #buttons {
+        margin: 3vh auto 0 auto;
+    }
+
+    button {
+        height: 34px;
+        width: 34px;
+        margin-left: 15px;
+        font-size: 20px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 768px) {
+    .logo {
+        max-width: 533px;
+        border: 3px solid #ffe919;
+    }
+
+    main {
+        margin-top: 4vh;
+    }
+
+    main h1 {
+        font-size: 42px;
+        margin-bottom: 3vh;
+    }
+
+    main #characters {
+        width: 350px;
+        height: 430px;
+        margin: 0 auto;
+    }
+
+    main .character {
+        margin: 0px 0px 20px 35px;
+        font-size: 20px;
+    }
+
+    #buttons {
+        margin: 3vh auto 0 auto;
+    }
+
+    button {
+        height: 34px;
+        width: 34px;
+        margin-left: 15px;
+        font-size: 20px;
+    }
+
+    i.icon-star-1:before {
+        vertical-align: 2px;
+        font-size: 20px;
+    }
+
+    .title2 {
+        font-size: 44px;
+    }
+
+
+    #characterDetails {
+        width: 400px;
+        height: 400px;
+        margin: 5vh auto;
+        font-size: 28px;
+    }
+
+}
+
+@media (orientation: portrait) and (min-width: 1024px) {
+    .logo {
+        max-width: 720px;
+        border: 4px solid #ffe919;
+    }
+
+    main h1 {
+        font-size: 56px;
+        margin-bottom: 3vh;
+    }
+
+    main #characters {
+        width: 520px;
+        height: 570px;
+        margin: 0 auto;
+    }
+
+    main .character {
+        margin: 0px 0px 20px 35px;
+        font-size: 32px;
+    }
+
+    #buttons {
+        margin: 3vh auto 0 auto;
+    }
+
+    button {
+        height: 46px;
+        width: 46px;
+        margin-left: 24px;
+        font-size: 26px;
+        border: 3px solid #ffe919;
+    }
+
+    i.icon-star-1:before {
+        vertical-align: 3px;
+        font-size: 28px;
+    }
+
+    .title2 {
+        font-size: 58px;
+    }
+
+    #characterDetails {
+        width: 480px;
+        height: 480px;
+        margin: 5vh auto;
+        font-size: 38px;
+    }
+
+    .text {
+        padding: 16px 0px 16px 0px;
+    }
+
+    .data {
+        padding: 16px 0px 16px 20px;
+    }
+
+}
+
+@media (orientation: landscape) {
+    html {
+        overflow: auto;
+    }
+
+    main {
+        margin-top: 15px;
+    }
+
+    main h1 {
+        margin-bottom: 15px;
+    }
+
+    #buttons {
+        margin: 20px auto 15px auto;
+    }
+
+    .container2 {
+        margin-top: 5vh;
+    }
+
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+    .logo {
+        max-width: 480px;
+        border: 2px solid #ffe919;
+    }
+
+    main {
+        margin-top: 28px;
+    }
+
+    main h1 {
+        font-size: 36px;
+        margin-bottom: 28px;
+    }
+
+
+    main #characters {
+        width: 350px;
+        height: 430px;
+        margin: 0 auto;
+    }
+
+    main .character {
+        margin: 0px 0px 20px 35px;
+        font-size: 20px;
+    }
+
+    main .character a:hover {
+        color: white;
+    }
+
+    i.icon-star-1:before {
+        vertical-align: 2px;
+        font-size: 18px;
+    }
+
+    #buttons {
+        margin: 26px auto 0 auto;
+    }
+
+    button {
+        height: 34px;
+        width: 34px;
+        margin-left: 16px;
+        font-size: 16px;
+        border: 3px solid #ffe919;
+    }
+
+    button:hover {
+        -webkit-box-shadow: 0px 0px 21px 3px rgba(255, 255, 255, 0.47);
+        -moz-box-shadow: 0px 0px 21px 3px rgba(255, 255, 255, 0.47);
+        box-shadow: 0px 0px 21px 3px rgba(255, 255, 255, 0.47);
+        cursor: pointer;
+    }
+
+    .title2 {
+        font-size: 36px;
+    }
+
+    #characterDetails {
+        width: 360px;
+        height: 360px;
+        margin: 5vh auto;
+        font-size: 22px;
+    }
+
+    .text {
+        padding: 12px 0px 12px 25px;
+    }
+
+    .data {
+        padding: 12px 0px 12px 10px;
+    }
 }
